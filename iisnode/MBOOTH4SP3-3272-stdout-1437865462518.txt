@@ -1,7 +1,0 @@
-Express server listening on port \\.\pipe\204cf040-aff1-42d9-bd4e-bd744614f293
-[90mGET /carts/id_1 [32m200 [90m454ms - 389b[0m
-[90mPOST /carts/id_1/items [32m201 [90m22ms[0m
-[90mGET /carts/id_1 [32m200 [90m34ms - 820b[0m
-Starting scraper
-Setting a value: ''
-[90mGET /carts/id_1 [32m200 [90m24ms - 802b[0m

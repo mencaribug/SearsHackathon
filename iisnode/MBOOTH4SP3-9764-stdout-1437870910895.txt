@@ -1,6 +1,0 @@
-Express server listening on port \\.\pipe\cb1eab57-1fba-4807-8d02-72b9617990d9
-[90mGET / [32m200 [90m534ms - 576b[0m
-[90mGET /carts/id_1 [32m200 [90m47ms - 389b[0m
-[90mPOST /carts/id_1/items [32m201 [90m24ms[0m
-[90mGET /carts/id_1 [32m200 [90m35ms - 820b[0m
-Got the response from SEARS: {"statusData":{"ResponseCode":"1","RespMessage":"This product is no longer available"},"apiTracking":"Server: PROD-SERVER-404-2|Tracking ID: {1437870914754}|API Client Session Key: NA|Time : Sat Jul 25 19:35:14 CDT 2015|UID : 2492558981766809811|From Cache : N"}

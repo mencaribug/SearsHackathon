@@ -1,0 +1,11 @@
+TypeError: Cannot read property 'length' of undefined
+    at getCartList (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\server.js:56:28)
+    at callbacks (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\lib\router\index.js:161:37)
+    at param (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\lib\router\index.js:135:11)
+    at pass (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\lib\router\index.js:142:5)
+    at Router._dispatch (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\lib\router\index.js:170:5)
+    at Object.router (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\lib\router\index.js:33:10)
+    at next (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\node_modules\connect\lib\proto.js:190:15)
+    at Object.methodOverride [as handle] (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\node_modules\connect\lib\middleware\methodOverride.js:37:5)
+    at next (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\node_modules\connect\lib\proto.js:190:15)
+    at Object.jsonParser [as handle] (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\body-parser\lib\types\json.js:107:37)

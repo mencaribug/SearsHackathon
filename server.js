@@ -30,12 +30,13 @@ app.configure('development', function () {
 });
 
 app.get('/', function (req, res) {
-    res.render('index', { title: 'Express', MyCarts: MyCarts });
+    res.render('index', { title: 'Carts - Shopping Buddies', MyCarts: MyCarts });
 });
 
 app.get('/users', user.list);
 
 // Cart Management
+app.post("/cartList", getCartList);
 app.post("/carts", postCart);
 app.get("/carts/:cartId", getCart);
 app.get("/cartItems/:cartId", getCartItems);
@@ -49,8 +50,25 @@ http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
 });
 
+function getCartList(req, res) {
+    console.log("getCartList body: " + JSON.stringify(req.body));
+    var ids = req.body.ids || [];
+    var carts = [];
+    for (var i = 0; i < ids.length; i++) {
+        var cart = findCartById(ids[i]);
+        if (cart != null) {
+            carts.push(cart);
+        }
+    }
+
+    res.status(200).send(JSON.stringify({ carts: carts }));
+}
+
 function postCart(req, res) {
-    MyCarts.push(makeNewCart(req.body.name));
+    var newCart = makeNewCart(req.body.name);
+    MyCarts.push(newCart);
+    res.set("cartId", newCart.id);
+    res.set("creatorSecret", creatorSecrets[newCart.id]);
     res.status(201).send();
 }
 
@@ -68,7 +86,7 @@ function getCart(req, res) {
     var cartId = req.params.cartId;
     var cart = findCartById(cartId);
     if (cart) {
-        res.render('cart', { title: 'Shopping Buddies', cart: cart });
+        res.render('cart', { title: cart.name + ' - Shopping Buddies', cart: cart });
     } else {
         res.status(500).send("No cart with id " + cartId + " found.");
     }
@@ -176,7 +194,29 @@ function deleteItemFromCart(req, res) {
 }
 
 function makeNewCart(name) {
+    var secret = randString(true);
+    var id = randString();
+    if(!creatorSecrets) {
+        console.log("creatorSecrets is undefined!");
+        creatorSecrets = [];
+    }
+    creatorSecrets[id] = secret;
+
     return { name: name, id: nextId(), items: [] };
+}
+
+function randString(lower) {
+    var text = "";
+    if (lower) {
+        var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+    } else {
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    }
+
+    for (var i = 0; i < 10; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
 }
 
 function makeNewItem(url) {
@@ -290,9 +330,10 @@ function GET(url, callback) {
 }
 
 var MyCarts = [makeNewCart("My First Cart"), makeNewCart("For Friends")];
+var creatorSecrets = [];
 
 function saveToJson() {
-    var json = JSON.stringify({ MyCarts: MyCarts, idCount: idCount });
+    var json = JSON.stringify({ MyCarts: MyCarts, idCount: idCount, creatorSecrets: creatorSecrets });
     fs = require('fs');
     fs.writeFile("storage/carts.json", json);
 }
@@ -306,6 +347,7 @@ function loadFromJson() {
         var obj = JSON.parse(data);
         MyCarts = obj.MyCarts;
         idCount = obj.idCount;
+        creatorSecrets = obj.creatorSecrets || [];
     });
 
 }

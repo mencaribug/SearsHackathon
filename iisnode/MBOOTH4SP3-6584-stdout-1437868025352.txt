@@ -1,8 +1,0 @@
-Express server listening on port \\.\pipe\159815dc-7dfa-4965-a5f9-16a369f42995
-[90mGET / [32m200 [90m404ms - 576b[0m
-[90mGET /carts/id_1 [32m200 [90m47ms - 389b[0m
-[90mPOST /carts/id_1/items [31m500 [90m74ms[0m
-[90mGET /carts/id_1 [32m200 [90m83ms - 389b[0m
-[90mPOST /carts/id_1/items [32m201 [90m4ms[0m
-[90mGET /carts/id_1 [32m200 [90m40ms - 820b[0m
-Found result: '{"title":"Wheee-"};

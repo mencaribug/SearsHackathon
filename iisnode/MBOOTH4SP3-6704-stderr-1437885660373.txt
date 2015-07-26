@@ -1,8 +1,0 @@
-Application has thrown an uncaught exception and is terminated:
-ReferenceError: items is not defined
-    at C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\server.js:201:49
-    at C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\server.js:218:9
-    at IncomingMessage.<anonymous> (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\server.js:229:13)
-    at IncomingMessage.emit (events.js:117:20)
-    at _stream_readable.js:944:16
-    at process._tickCallback (node.js:442:13)

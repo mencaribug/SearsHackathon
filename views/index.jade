@@ -4,8 +4,6 @@ block content
   div
     div.pageLabel List of my carts
     div#itemsList
-        each cart in MyCarts
-          div.cartLink
-            img.cartImg(src="/images/cart.png")
-            a(href='/carts/' + cart.id) #{cart.name}
     button(onclick="addCart()") New Cart
+  script.
+    clientRenderCarts();

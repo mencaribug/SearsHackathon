@@ -4,7 +4,11 @@ function addCart() {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/carts", true);
         xhr.onload = function () {
-            clientRenderCartItems();
+            var createdCartId = xhr.getResponseHeader("cartId");
+            var creatorSecret = xhr.getResponseHeader("creatorSecret");
+            addCreatorSecret(createdCartId, creatorSecret);
+            addKnownCartId(createdCartId);
+            clientRenderCarts();
         };
 
         xhr.setRequestHeader("Content-Type", "application/json");
@@ -137,14 +141,43 @@ function runSearch(text) {
     xhr.send(JSON.stringify({ query: text }));
 }
 
-function getCartItems(callback) {
+function getCartItems(cartId, callback) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/cartItems/" + theCartId, true);
+    xhr.open("GET", "/cartItems/" + cartId, true);
     xhr.onload = function () {
         callback(JSON.parse(this.responseText).items);
     };
 
     xhr.send();
+}
+
+
+function getCartList(callback) {
+    var ids = getKnownCartIds();
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/cartList", true);
+    xhr.onload = function () {
+        callback(JSON.parse(this.responseText).carts);
+    };
+
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify({ ids: ids }));
+}
+
+function clientRenderCarts() {
+    getCartList(function (carts) {
+        var container = document.getElementById("itemsList");
+        container.textContent = "";
+        for (var i = 0; i < carts.length; i++) {
+            var itemDiv = renderCartLink(carts[i]);
+            container.appendChild(itemDiv);
+        }
+
+        if (carts.length == 0) {
+            container.appendChild(document.createTextNode("You don't have any carts! Create a new one..."));
+        }
+    });
 }
 
 function make(type, contents, className) {
@@ -153,7 +186,7 @@ function make(type, contents, className) {
         d.innerText = contents;
     }
 
-    if(className) {
+    if (className) {
         d.className = className;
     }
     return d;
@@ -166,14 +199,31 @@ function img(src) {
 }
 
 function clientRenderCartItems() {
-    getCartItems(function (items) {
+    getCartItems(theCartId, function (items) {
         var container = document.getElementById("actualItemList");
         container.textContent = "";
         for (var i = 0; i < items.length; i++) {
             var itemDiv = renderCartItem(items[i]);
             container.appendChild(itemDiv);
         }
+
+        if (items.length == 0) {
+            container.appendChild(document.createTextNode("You don't have any items! Add some to your cart..."));
+        }
     });
+}
+
+function renderCartLink(cart) {
+    var root = make("div", "", "cartLink");
+    var cartLink = make("div", "", "cartLink");
+    var im = img("/images/cart.png");
+    im.className = "cartImg";
+    cartLink.appendChild(im);
+    var a = make("a", cart.name, "");
+    a.href = '/carts/' + cart.id;
+    cartLink.appendChild(a);
+    root.appendChild(cartLink);
+    return root;
 }
 
 function renderCartItem(item) {
@@ -183,7 +233,7 @@ function renderCartItem(item) {
     root.appendChild(make("span", item.price, "priceDiv"));
     var bs = make("div", "", "bottomSection");
     var cs = make("div", "", "commentSection");
-    for(var i = 0; i < item.comments.length; i++) {
+    for (var i = 0; i < item.comments.length; i++) {
         cs.appendChild(make("span", item.comments[i].name + ": " + item.comments[i].message, ""));
         cs.appendChild(make("br", "", ""));
     }
@@ -199,13 +249,13 @@ function renderCartItem(item) {
     bs.appendChild(cs);
 
     var rs = make("div", "", "ratingSection");
-    for(var i = 0; i < item.ratings.length; i++) {
+    for (var i = 0; i < item.ratings.length; i++) {
         var rating = item.ratings[i];
         var rd = make("div", "", "ratingDiv");
         var ratingButton = make("button", rating.name, "");
         ratingButton.onclick = rateItem.bind(this, theCartId, item.id, rating.name);
         rd.appendChild(ratingButton);
-        if  (!rating.count) {
+        if (!rating.count) {
             rating.count = "0"
         }
         rd.appendChild(make("span", rating.count, "ratingCount"));
@@ -219,37 +269,91 @@ function renderCartItem(item) {
         deleteItem(theCartId, item.id);
     }
     root.appendChild(delButton);
-    
+
     return root;
     /*
 
-             div.ratingSection
-                      for rating in item.ratings
-                        div.ratingDiv
-                          button(onclick="rateItem('" + cart.id + "', '" + item.id + "', '" + rating.name + "')")= rating.name
-                          span.ratingCount= rating.count
-                  button(onclick="deleteItem('" + cart.id + "', '" + item.id + "')") Del
+    div.ratingSection
+    for rating in item.ratings
+    div.ratingDiv
+    button(onclick="rateItem('" + cart.id + "', '" + item.id + "', '" + rating.name + "')")= rating.name
+    span.ratingCount= rating.count
+    button(onclick="deleteItem('" + cart.id + "', '" + item.id + "')") Del
 
 
     div.item
-                  img(src=item.img)
-                  span.name= item.name
-                  span.priceDiv= item.price
-                  div
-                      a(href=item.url)= Link
-                  div.bottomSection
-                    div.commentSection
-                      for comment in item.comments
-                          span #{comment.name}: #{comment.message}
-                          br
-                      br
-                      input(id="input_" + item.id placeholder="comment...") 
-                      button(onclick="submitComment('" + cart.id + "', '" + item.id + "')") Send
-                    div.ratingSection
-                      for rating in item.ratings
-                        div.ratingDiv
-                          button(onclick="rateItem('" + cart.id + "', '" + item.id + "', '" + rating.name + "')")= rating.name
-                          span.ratingCount= rating.count
-                  button(onclick="deleteItem('" + cart.id + "', '" + item.id + "')") Del
+    img(src=item.img)
+    span.name= item.name
+    span.priceDiv= item.price
+    div
+    a(href=item.url)= Link
+    div.bottomSection
+    div.commentSection
+    for comment in item.comments
+    span #{comment.name}: #{comment.message}
+    br
+    br
+    input(id="input_" + item.id placeholder="comment...") 
+    button(onclick="submitComment('" + cart.id + "', '" + item.id + "')") Send
+    div.ratingSection
+    for rating in item.ratings
+    div.ratingDiv
+    button(onclick="rateItem('" + cart.id + "', '" + item.id + "', '" + rating.name + "')")= rating.name
+    span.ratingCount= rating.count
+    button(onclick="deleteItem('" + cart.id + "', '" + item.id + "')") Del
     */
+}
+
+
+function addCreatorSecret(cartId, key) {
+    var secretString = window.localStorage.getItem("creatorSecrets");
+    if (secretString) {
+        var secrets = JSON.parse(secretString);
+
+    } else {
+        var secrets = [];
+    }
+
+    secrets.push({ cartId: cartId, key: key });
+
+    window.localStorage.setItem("creatorSecrets", JSON.stringify(secrets));
+}
+
+function getCreatorSecret(cartId) {
+    var secretString = window.localStorage.getItem("creatorSecrets");
+    if (secretString) {
+        var secrets = JSON.parse(secretString);
+        for (var i = 0; i < secrets.length; i++) {
+            if (secrets[i].cartId == cartId) {
+                return secrets[i].key;
+            }
+        }
+    }
+
+    return null;
+}
+
+function getKnownCartIds() {
+    var cartIdsString = window.localStorage.getItem("knownCartIds");
+    if (cartIdsString) {
+        var cartIds = JSON.parse(cartIdsString);
+        return cartIds;
+    }
+
+    return [];
+}
+
+function addKnownCartId(cartId) {
+    var cartIdsString = window.localStorage.getItem("knownCartIds");
+    if (cartIdsString) {
+        var cartIds = JSON.parse(cartIdsString);
+    } else {
+        var cartIds = [];
+    }
+
+    if (cartIds.indexOf(cartId) == -1) {
+        cartIds.push(cartId);
+    }
+
+    window.localStorage.setItem("knownCartIds", JSON.stringify(cartIds));
 }

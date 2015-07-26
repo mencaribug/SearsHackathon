@@ -1,9 +1,0 @@
-Express server listening on port \\.\pipe\1ba7a227-49fc-4087-b5f4-8f9a0a8f5b8e
-{ [Error: ENOENT, open 'C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\storage\carts.json']
-  errno: 34,
-  code: 'ENOENT',
-  path: 'C:\\Users\\mbooth4\\Documents\\My Web Sites\\Shopping Buddies\\storage\\carts.json' }
-[90mGET /carts/id_1 [32m200 [90m397ms - 389b[0m
-[90mGET / [32m200 [90m65ms - 576b[0m
-[90mGET / [32m200 [90m55ms - 576b[0m
-[90mGET /carts/id_1 [32m200 [90m27ms - 389b[0m

@@ -1,7 +1,0 @@
-Express server listening on port \\.\pipe\8d4c1166-2325-4b2b-bd7e-57e39a70663d
-[90mGET / [32m200 [90m1090ms - 576b[0m
-[90mGET /carts/id_1 [32m200 [90m35ms - 389b[0m
-[90mPOST /carts/id_1/items [32m201 [90m21ms[0m
-[90mGET /carts/id_1 [32m200 [90m47ms - 820b[0m
-Found result: '{"title":"Wheee-"};
-[90mGET /carts/id_1 [32m200 [90m24ms - 808b[0m

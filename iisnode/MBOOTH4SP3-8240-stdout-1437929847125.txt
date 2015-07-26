@@ -1,0 +1,7 @@
+creatorSecrets is undefined!
+Express server listening on port \\.\pipe\ba0b7334-afca-4496-a5b7-9544f6355e4e
+{ [Error: ENOENT, open 'C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\storage\carts.json']
+  errno: 34,
+  code: 'ENOENT',
+  path: 'C:\\Users\\mbooth4\\Documents\\My Web Sites\\Shopping Buddies\\storage\\carts.json' }
+[90mGET / [32m200 [90m623ms - 534b[0m
