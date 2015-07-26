@@ -4,6 +4,7 @@ block content
   script(type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55b45ab850be0ec2" async="async")
   script.
     var theCartId = "#{cart.id}";
+    addKnownCartId(theCartId);
   div
     span#cartDescriptionTitle Description: #{cart.description}
     span#cartCreatorTitle Created by - #{cart.userName}

@@ -333,9 +333,10 @@ function GET(url, callback) {
 
 var MyCarts = [makeNewCart("My First Cart", "default"), makeNewCart("For Friends", "admin")];
 var creatorSecrets = [];
+var transactionLog = [];
 
 function saveToJson() {
-    var json = JSON.stringify({ MyCarts: MyCarts, idCount: idCount, creatorSecrets: creatorSecrets });
+    var json = JSON.stringify({ MyCarts: MyCarts, idCount: idCount, creatorSecrets: creatorSecrets, transactionLog: transactionLog });
     fs = require('fs');
     fs.writeFile("storage/carts.json", json);
 }
@@ -349,6 +350,7 @@ function loadFromJson() {
         var obj = JSON.parse(data);
         MyCarts = obj.MyCarts;
         idCount = obj.idCount;
+        transactionLog = obj.transactionLog || [];
         creatorSecrets = obj.creatorSecrets || [];
     });
 
