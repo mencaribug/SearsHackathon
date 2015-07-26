@@ -1,0 +1,7 @@
+Express server listening on port \\.\pipe\0dda7470-6469-46c5-aab6-2f2135026f31
+[90mGET / [32m200 [90m423ms - 576b[0m
+[90mGET /carts/id_2 [32m200 [90m37ms - 387b[0m
+[90mPOST /carts/id_2/items [32m201 [90m24ms[0m
+[90mGET /carts/id_2 [32m200 [90m54ms - 818b[0m
+Found result: '{"title":""};
+[90mGET /carts/id_2 [32m200 [90m24ms - 800b[0m

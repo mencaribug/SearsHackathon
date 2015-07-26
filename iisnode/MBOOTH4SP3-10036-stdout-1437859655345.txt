@@ -1,0 +1,3 @@
+Express server listening on port \\.\pipe\c887c9d8-74a9-46ed-982d-62744b3d6400
+[90mGET /carts/id_1 [32m200 [90m49ms - 298[0m
+[90mGET /carts/id_1 [32m200 [90m3ms - 410[0m

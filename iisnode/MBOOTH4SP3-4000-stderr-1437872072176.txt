@@ -1,0 +1,19 @@
+TypeError: C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\views\index.jade:7
+    5|     div.pageLabel List of my carts
+    6|     div#itemsList
+  > 7|         each cart in MyCarts
+    8|           div.cartLink
+    9|             img.cartImg(src="/images/cart.png")
+    10|             a(href='/carts/' + cart.id) #{cart.name}
+
+Cannot read property 'length' of undefined
+    at eval (eval at <anonymous> (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\index.js:218:8), <anonymous>:74:31)
+    at eval (eval at <anonymous> (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\index.js:218:8), <anonymous>:129:4)
+    at eval (eval at <anonymous> (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\index.js:218:8), <anonymous>:154:22)
+    at res (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\index.js:219:38)
+    at Object.exports.renderFile (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\index.js:380:38)
+    at Object.exports.renderFile (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\index.js:370:21)
+    at View.exports.__express [as engine] (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\index.js:417:11)
+    at View.render (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\lib\view.js:75:8)
+    at Function.app.render (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\lib\application.js:500:10)
+    at ServerResponse.res.render (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\express\lib\response.js:755:7)

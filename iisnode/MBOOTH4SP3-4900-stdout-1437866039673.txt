@@ -1,0 +1,13 @@
+Express server listening on port \\.\pipe\f62a1862-61a8-4e5d-a169-7acd69f36dbd
+[90mGET / [32m200 [90m465ms - 576b[0m
+[90mGET /carts/id_1 [32m200 [90m46ms - 389b[0m
+[90mPOST /carts/id_1/items [32m201 [90m28ms[0m
+[90mGET /carts/id_1 [32m200 [90m31ms - 476b[0m
+[90mGET / [32m200 [90m26ms - 576b[0m
+[90mGET /carts/id_1 [32m200 [90m15ms - 476b[0m
+[90mGET /carts/id_1 [32m200 [90m16ms - 476b[0m
+[90mPOST /carts/id_1/items [32m201 [90m5ms[0m
+[90mGET /carts/id_1 [32m200 [90m34ms - 941b[0m
+Starting scraper
+Setting a value: ''
+[90mGET /carts/id_1 [32m200 [90m26ms - 923b[0m

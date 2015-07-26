@@ -1,0 +1,4 @@
+Express server listening on port \\.\pipe\019b8cd5-9d49-4235-b508-16bdf3fff276
+[90mGET /carts/id_3 [32m200 [90m433ms - 1.26kb[0m
+Looking for item: '018VA59470112P'
+Got the response from SEARS: {"statusData":{"ResponseCode":"1","RespMessage":"This product is no longer available"},"apiTracking":"Server: null|Tracking ID: {1437876302883}|API Client Session Key: NA|Time : Sat Jul 25 21:05:02 CDT 2015|UID : 1029467636455364436|From Cache : N"}

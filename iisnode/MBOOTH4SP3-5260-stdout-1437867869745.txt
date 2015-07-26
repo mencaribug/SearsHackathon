@@ -1,0 +1,9 @@
+Express server listening on port \\.\pipe\f56c2b8c-8d54-4e62-8a7b-75b5dd70111c
+[90mGET / [32m200 [90m439ms - 576b[0m
+[90mGET /carts/id_1 [32m200 [90m38ms - 389b[0m
+[90mPOST /carts/id_1/items [32m201 [90m24ms[0m
+[90mGET /carts/id_1 [32m200 [90m58ms - 820b[0m
+Found result: '[object Object];
+[90mGET /carts/id_1 [32m200 [90m22ms - 802b[0m
+[90mGET / [32m200 [90m8ms - 576b[0m
+[90mGET /carts/id_1 [32m200 [90m17ms - 802b[0m

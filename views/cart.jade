@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  script(type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55b45ab850be0ec2" async="async")
+  script.
+    var theCartId = "#{cart.id}";
+  div#itemsList
+        span.pageLabel= cart.name
+        div.addthis_sharing_toolbox
+        div
+            if cart.items.length > 0
+              for item in cart.items
+                div.item
+                  img(src=item.img)
+                  span.name= item.name
+                  span.priceDiv= item.price
+                  div
+                      a(href=item.url)= Link
+                  div.bottomSection
+                    div.commentSection
+                      for comment in item.comments
+                          span #{comment.name}: #{comment.message}
+                          br
+                      br
+                      input(id="input_" + item.id placeholder="comment...") 
+                      button(onclick="submitComment('" + cart.id + "', '" + item.id + "')") Send
+                    div.ratingSection
+                      for rating in item.ratings
+                        div.ratingDiv
+                          button(onclick="rateItem('" + cart.id + "', '" + item.id + "', '" + rating.name + "')")= rating.name
+                          span.ratingCount= rating.count
+                  button(onclick="deleteItem('" + cart.id + "', '" + item.id + "')") Del
+            else
+              div This cart has no items!
+  div#searchDiv
+    input(id="urlInput" oninput="doSearch(event)" placeholder="Search, or paste a URL...")
+    div#searchResults

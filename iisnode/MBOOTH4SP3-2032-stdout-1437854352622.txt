@@ -1,0 +1,2 @@
+Express server listening on port \\.\pipe\cb1431a9-3830-4b31-a857-602e29333c03
+[90mGET /public/javascripts/api.js [33m404 [90m10ms[0m

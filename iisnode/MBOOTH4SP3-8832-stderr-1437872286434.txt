@@ -1,0 +1,7 @@
+Application has thrown an uncaught exception and is terminated:
+TypeError: Cannot read property 'SoftHardProductDetails' of undefined
+    at C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\server.js:123:37
+    at IncomingMessage.<anonymous> (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\server.js:136:13)
+    at IncomingMessage.emit (events.js:117:20)
+    at _stream_readable.js:944:16
+    at process._tickCallback (node.js:442:13)

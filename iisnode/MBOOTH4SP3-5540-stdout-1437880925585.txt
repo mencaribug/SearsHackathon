@@ -1,0 +1,24 @@
+Express server listening on port \\.\pipe\d322decd-548c-4c0d-b574-c036cd0ed354
+[90mGET /carts/id_3 [32m200 [90m494ms - 3.06kb[0m
+[90mPOST /carts/id_3/items/id_3/comments [32m200 [90m17ms[0m
+[90mGET /carts/id_3 [32m200 [90m65ms - 3.09kb[0m
+[90mPOST /carts/id_3/items/id_4/comments [32m200 [90m2ms[0m
+[90mGET /carts/id_3 [32m200 [90m48ms - 3.12kb[0m
+[90mGET /carts/id_3 [36m304 [90m25ms[0m
+[90mPOST /carts/id_3/items/id_4/comments [32m200 [90m0ms[0m
+[90mGET /carts/id_3 [32m200 [90m38ms - 3.14kb[0m
+[90mPOST /carts/id_3/items/id_4/comments [32m200 [90m0ms[0m
+[90mGET /carts/id_3 [32m200 [90m32ms - 3.17kb[0m
+[90mPOST /carts/id_3/items/id_4/comments [32m200 [90m1ms[0m
+[90mGET /carts/id_3 [32m200 [90m37ms - 3.2kb[0m
+[90mGET /carts/id_3 [36m304 [90m31ms[0m
+[90mGET / [32m200 [90m22ms - 678b[0m
+[90mGET / [32m200 [90m24ms - 678b[0m
+[90mGET /carts/id_2 [32m200 [90m50ms - 418b[0m
+[90mGET /carts/id_3 [36m304 [90m27ms[0m
+[90mGET / [32m200 [90m22ms - 678b[0m
+[90mGET /carts/id_3 [36m304 [90m40ms[0m
+[90mPOST /carts/id_3/items/id_4/comments [32m200 [90m0ms[0m
+[90mGET /carts/id_3 [32m200 [90m34ms - 3.23kb[0m
+[90mPOST /carts/id_3/items/id_4/comments [32m200 [90m0ms[0m
+[90mGET /carts/id_3 [32m200 [90m30ms - 3.25kb[0m

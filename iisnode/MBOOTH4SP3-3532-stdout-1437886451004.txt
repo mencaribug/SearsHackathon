@@ -1,0 +1,2 @@
+[90mPOST /search [32m200 [90m339ms - 3.83kb[0m
+[90mGET /carts/id_3 [36m304 [90m78ms[0m

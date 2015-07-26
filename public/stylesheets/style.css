@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.addthis_sharing_toolbox {
+    float: right;
+}
+
+.titleSegment {
+    height: 70px;
+    width: 100%;
+    margin: 0;
+    padding-top: 20px;
+    padding-left: 30px;
+    background-color: #44CC66;
+    color: white;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.pageLabel {
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+#itemsList {
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px;
+    width: 600px;
+}
+
+.cartLink {
+    font-size: 26px;
+    padding: 10px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.cartImg {
+    height: 35px;
+    width: 35px;
+}
+
+.item {
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    max-width: 600px;
+    font-size: 14px;
+    min-height: 200px;
+}
+
+img {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.item .name {
+    font-size: 14pt;
+}
+
+#searchDiv {
+    vertical-align: top;
+    display: inline-block;
+    width: 650px;
+    height: 650px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    overflow: auto;
+    background-color: white;
+}
+
+#searchDiv #searchResults {
+    text-align: left;
+    height: calc(100% - 50px);
+    border-top: 3px solid #AAAAAA;
+}
+
+#searchDiv #searchResults > div {
+    border-bottom: 2px solid #CCCCCC;
+    padding: 6px;
+    margin: 3px;
+}
+
+#searchDiv input {
+    text-align: center;
+    padding: 10px;
+    font-size: 28px;
+    margin: 5px;
+    width: 400px;
+}
+
+.priceDiv {
+    color: #008800;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.priceDiv::before {
+    content: "$";
+}
+
+.commentSection {
+    display:  inline-block;
+    width:  300px;
+}
+
+.ratingSection {
+    display:  inline-block;
+    float:  right;
+    width: 100px;
+    min-height: 100px;
+}
+.ratingDiv {
+    height:  25px;
+}
+
+.ratingDiv .ratingCount {
+    float: right;
+}
+
+.ratingDiv .ratingCount::before {
+    content: "(";
+}
+
+.ratingDiv .ratingCount::after {
+    content: ")";
+}

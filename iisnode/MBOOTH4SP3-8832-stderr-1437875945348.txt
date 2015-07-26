@@ -1,0 +1,19 @@
+Error: C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\views\cart.jade:13
+    11|               div
+    12|                   a(href=item.url)= Link
+  > 13|               button(onclick="deleteItem('" + cart.id + "', '" + item.id + "')")Del
+    14|         else
+    15|           div This cart has no items!
+    16|     button(onclick="addItem('" + cart.id + "')") Add Item by URL
+
+Unexpected token `tag` expected `text`, `code`, `:`, `newline` or `eos`
+    at Parser.tag (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:828:15)
+    at Parser.parseTag (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:729:25)
+    at Parser.tag (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:838:24)
+    at Parser.parseTag (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:759:17)
+    at Parser.parseExpr (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:211:21)
+    at Parser.block (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:729:25)
+    at Parser.parseEach (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:461:23)
+    at Parser.parseExpr (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\jade\lib\parser.js:233:21)

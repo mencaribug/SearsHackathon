@@ -1,0 +1,17 @@
+Express server listening on port \\.\pipe\b2999be2-c4c6-4622-95ae-6cd3f764f38f
+[90mGET /carts/id_1 [32m200 [90m405ms - 389b[0m
+[90mGET /carts/id_1 [32m200 [90m40ms - 389b[0m
+Looking for item: 'p-018VA76322912P'
+[90mPOST /carts/id_1/items [32m201 [90m26ms[0m
+[90mGET /carts/id_1 [32m200 [90m45ms - 820b[0m
+Got the response from SEARS: {"statusData":{"ResponseCode":"1","RespMessage":"This product is no longer available"},"apiTracking":"Server: PROD-SERVER-404-2|Tracking ID: {1437870914754}|API Client Session Key: NA|Time : Sat Jul 25 19:35:14 CDT 2015|UID : 2492558981766809811|From Cache : N"}
+[90mGET / [32m200 [90m47ms - 576b[0m
+[90mGET /carts/id_2 [32m200 [90m12ms - 387b[0m
+Looking for item: 'p-018VA76322912P'
+[90mPOST /carts/id_2/items [32m201 [90m5ms[0m
+[90mGET /carts/id_2 [32m200 [90m40ms - 818b[0m
+Got the response from SEARS: {"statusData":{"ResponseCode":"1","RespMessage":"This product is no longer available"},"apiTracking":"Server: PROD-SERVER-404-2|Tracking ID: {1437870914754}|API Client Session Key: NA|Time : Sat Jul 25 19:35:14 CDT 2015|UID : 2492558981766809811|From Cache : N"}
+Looking for item: 'p-018VA76322912P'
+[90mPOST /carts/id_2/items [32m201 [90m4ms[0m
+[90mGET /carts/id_2 [32m200 [90m32ms - 1.25kb[0m
+Got the response from SEARS: {"statusData":{"ResponseCode":"1","RespMessage":"This product is no longer available"},"apiTracking":"Server: PROD-SERVER-404-2|Tracking ID: {1437870914754}|API Client Session Key: NA|Time : Sat Jul 25 19:35:14 CDT 2015|UID : 2492558981766809811|From Cache : N"}

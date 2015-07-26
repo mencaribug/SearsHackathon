@@ -1,0 +1,10 @@
+SyntaxError: Unexpected token o
+    at Object.parse (native)
+    at parse (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\body-parser\lib\types\json.js:88:17)
+    at C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\body-parser\lib\read.js:108:18
+    at done (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\body-parser\node_modules\raw-body\index.js:239:14)
+    at IncomingMessage.onEnd (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\body-parser\node_modules\raw-body\index.js:285:7)
+    at IncomingMessage.g (events.js:180:16)
+    at IncomingMessage.emit (events.js:92:17)
+    at _stream_readable.js:944:16
+    at process._tickCallback (node.js:442:13)

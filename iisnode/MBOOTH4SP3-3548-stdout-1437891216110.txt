@@ -1,0 +1,14 @@
+Express server listening on port \\.\pipe\4f166bb0-2b52-4368-959e-df8430b7a724
+[90mGET /carts/id_1 [32m200 [90m500ms - 1.98kb[0m
+[90mGET /carts/id_1 [36m304 [90m75ms[0m
+[90mGET /carts/id_1 [36m304 [90m53ms[0m
+[90mGET /carts/id_1 [36m304 [90m52ms[0m
+[90mPOST /carts/id_1/items/id_3/rate [32m200 [90m20ms[0m
+[90mGET /carts/id_1 [32m200 [90m100ms - 1.98kb[0m
+[90mPOST /carts/id_1/items/id_3/rate [32m200 [90m1ms[0m
+[90mGET /carts/id_1 [32m200 [90m53ms - 1.98kb[0m
+[90mPOST /carts/id_1/items/id_3/rate [32m200 [90m1ms[0m
+[90mGET /carts/id_1 [32m200 [90m79ms - 1.98kb[0m
+[90mPOST /carts/id_1/items/id_3/rate [32m200 [90m0ms[0m
+[90mGET /carts/id_1 [32m200 [90m84ms - 1.98kb[0m
+[90mGET /carts/id_1 [36m304 [90m31ms[0m
