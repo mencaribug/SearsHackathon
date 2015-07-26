@@ -4,8 +4,28 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h1 > a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+h1 > a:visited {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+h1 > a:hover {
+    text-decoration: underline !important;
+}
+
+.cartItemsCount {
+    margin-left: 5px;
+}
+
 .addthis_sharing_toolbox {
     float: right;
+    position: relative;
+    top: -5px;
 }
 
 .titleSegment {
@@ -16,6 +36,7 @@ body {
     padding-left: 30px;
     background-color: #44CC66;
     color: white;
+    margin-bottom: 10px;
 }
 
 a {
@@ -34,18 +55,64 @@ a {
     border-radius: 4px;
     padding: 20px;
     margin: 10px;
+    margin-top: 0px;
     width: 600px;
 }
 
 .cartLink {
     font-size: 26px;
     padding: 10px;
-    border-bottom: 1px solid #CCCCCC;
+}
+
+#newCartForm, #itemsList {
+    display: inline-block;
+}
+
+#newCartForm {
+    font-size: 28px !important;
+    text-align: center;
+}
+
+#newCartForm input, #newCartForm button {
+    padding: 10px;
+    font-size: 28px !important;
+    margin: 10px;
+}
+
+.descriptionContainer {
+    font-size: 20px;
+}
+
+#cartDescriptionTitle {
+    font-style: italic;
+    margin: 8px;
+    font-size: 20px;
+    margin-right:  30px;
+}
+
+#cartCreatorTitle {
+    font-style: italic;
+    margin: 8px;
+    font-size: 20px;
+}
+
+.cartDescription {
+    color: #555555;
+    margin-right: 15px;
+}
+
+.cartUserName {
+    font-style: italic;
+    color: #888888;
 }
 
 .cartImg {
     height: 35px;
     width: 35px;
+}
+
+.cartNameLink {
+    margin-left: 10px;
 }
 
 .item {
@@ -65,9 +132,11 @@ img {
 
 .item .name {
     font-size: 14pt;
+    margin-left: 10px;
 }
 
 #searchDiv {
+    margin: 0;
     vertical-align: top;
     display: inline-block;
     width: 650px;
@@ -110,18 +179,19 @@ img {
 }
 
 .commentSection {
-    display:  inline-block;
-    width:  300px;
+    display: inline-block;
+    width: 300px;
 }
 
 .ratingSection {
-    display:  inline-block;
-    float:  right;
+    display: inline-block;
+    float: right;
     width: 100px;
     min-height: 100px;
 }
+
 .ratingDiv {
-    height:  25px;
+    height: 25px;
 }
 
 .ratingDiv .ratingCount {

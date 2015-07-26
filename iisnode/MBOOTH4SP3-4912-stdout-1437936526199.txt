@@ -1,0 +1,12 @@
+creatorSecrets is undefined!
+Express server listening on port \\.\pipe\b9a190a0-9bb9-443b-978b-bb603b49cf9d
+[90mGET / [32m200 [90m2050ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL"]}
+[90mPOST /cartList [32m200 [90m175ms - 2.74kb[0m
+[90mGET /carts/id_3 [32m200 [90m295ms - 4.72kb[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL"]}
+[90mPOST /cartList [32m200 [90m53ms - 2.74kb[0m
+[90mGET /carts/H7CM78HYOL [32m200 [90m136ms - 3.88kb[0m
+[90mGET / [32m200 [90m71ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL"]}
+[90mPOST /cartList [32m200 [90m21ms - 2.74kb[0m

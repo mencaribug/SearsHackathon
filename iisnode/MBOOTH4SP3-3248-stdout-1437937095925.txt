@@ -1,0 +1,4 @@
+creatorSecrets is undefined!
+Express server listening on port \\.\pipe\d9b31f3b-5858-453c-adb9-24d7b62334d9
+[90mGET / [32m200 [90m891ms - 710b[0m
+[90mGET / [32m200 [90m47ms - 710b[0m

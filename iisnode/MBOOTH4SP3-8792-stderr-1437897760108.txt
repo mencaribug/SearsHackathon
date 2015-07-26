@@ -1,7 +1,0 @@
-Application has thrown an uncaught exception and is terminated:
-TypeError: Cannot call method 'map' of undefined
-    at C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\server.js:270:30
-    at IncomingMessage.<anonymous> (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\server.js:285:13)
-    at IncomingMessage.emit (events.js:117:20)
-    at _stream_readable.js:944:16
-    at process._tickCallback (node.js:442:13)

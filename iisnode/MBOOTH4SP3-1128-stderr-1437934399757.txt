@@ -1,0 +1,7 @@
+Error: request aborted
+    at IncomingMessage.onAborted (C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\node_modules\body-parser\node_modules\raw-body\index.js:243:10)
+    at IncomingMessage.emit (events.js:92:17)
+    at abortIncoming (http.js:1916:11)
+    at Socket.serverSocketCloseListener (http.js:1928:5)
+    at Socket.emit (events.js:117:20)
+    at Pipe.close (net.js:466:12)

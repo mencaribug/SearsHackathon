@@ -1,5 +1,6 @@
 function addCart() {
-    var cartName = prompt("Input a name for the cart");
+    var cartName = document.getElementById("cartName").value;
+    var cartDescription = document.getElementById("cartDescription").value;
     if (cartName) {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/carts", true);
@@ -11,8 +12,9 @@ function addCart() {
             clientRenderCarts();
         };
 
+        var userName = getUserName();
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify({ name: cartName }));
+        xhr.send(JSON.stringify({ name: cartName, userName: userName, description: cartDescription }));
     }
 }
 
@@ -66,8 +68,9 @@ function submitComment(cartId, itemId) {
         clientRenderCartItems();
     };
 
+    var name = getUserName();
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify({ name: "anonymous", message: text }));
+    xhr.send(JSON.stringify({ name: name, message: text }));
 }
 
 function rateItem(cartId, itemId, ratingName) {
@@ -219,10 +222,19 @@ function renderCartLink(cart) {
     var im = img("/images/cart.png");
     im.className = "cartImg";
     cartLink.appendChild(im);
-    var a = make("a", cart.name, "");
+    var a = make("a", cart.name, "cartNameLink");
     a.href = '/carts/' + cart.id;
     cartLink.appendChild(a);
+    var count = make("span", "(" + cart.items.length + " items)", "cartItemsCount");
+    cartLink.appendChild(count);
     root.appendChild(cartLink);
+    var descriptionContainer = make("div", "", "descriptionContainer");
+    if (cart.description) {
+        descriptionContainer.appendChild(make("span", cart.description, "cartDescription"));
+    }
+
+    descriptionContainer.appendChild(make("span", "Created by - " + cart.userName, "cartUserName"));
+    root.appendChild(descriptionContainer);
     return root;
 }
 
@@ -232,7 +244,8 @@ function renderCartItem(item) {
     root.appendChild(make("span", item.name, "name"))
     root.appendChild(make("span", item.price, "priceDiv"));
     var bs = make("div", "", "bottomSection");
-    var cs = make("div", "", "commentSection");
+    var cs = make("div", "Comments", "commentSection");
+    cs.appendChild(make("br", "", ""));
     for (var i = 0; i < item.comments.length; i++) {
         cs.appendChild(make("span", item.comments[i].name + ": " + item.comments[i].message, ""));
         cs.appendChild(make("br", "", ""));
@@ -356,4 +369,14 @@ function addKnownCartId(cartId) {
     }
 
     window.localStorage.setItem("knownCartIds", JSON.stringify(cartIds));
+}
+
+function getUserName() {
+    var userNameString = window.localStorage.getItem("userName");
+    if (!userNameString) {
+        var userNameString = prompt("What can we call you?");
+        window.localStorage.setItem("userName", userNameString)
+    }
+
+    return userNameString;
 }

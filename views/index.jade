@@ -4,6 +4,11 @@ block content
   div
     div.pageLabel List of my carts
     div#itemsList
-    button(onclick="addCart()") New Cart
+    form#newCartForm
+      input#cartName(placeholder="Cart Name...")
+      br
+      input#cartDescription(placeholder="Description...")
+      br
+      button(onclick="addCart()") New Cart
   script.
     clientRenderCarts();

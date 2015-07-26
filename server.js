@@ -65,7 +65,7 @@ function getCartList(req, res) {
 }
 
 function postCart(req, res) {
-    var newCart = makeNewCart(req.body.name);
+    var newCart = makeNewCart(req.body.name, req.body.userName, req.body.description);
     MyCarts.push(newCart);
     res.set("cartId", newCart.id);
     res.set("creatorSecret", creatorSecrets[newCart.id]);
@@ -193,16 +193,20 @@ function deleteItemFromCart(req, res) {
     res.status(201).send();
 }
 
-function makeNewCart(name) {
+function makeNewCart(name, userName, description) {
+    if (!description) {
+        description = "";
+    }
+
     var secret = randString(true);
     var id = randString();
-    if(!creatorSecrets) {
+    if (!creatorSecrets) {
         console.log("creatorSecrets is undefined!");
         creatorSecrets = [];
     }
     creatorSecrets[id] = secret;
 
-    return { name: name, id: nextId(), items: [] };
+    return { name: name, userName: userName, id: id, items: [], description: description };
 }
 
 function randString(lower) {
@@ -292,17 +296,15 @@ function getProductDetails(id, item, callback) {
 
 function searchByTerm(req, res) {
     var query = req.body.query;
-    try {
-        searchTermAtSears(query, function (products) {
-            res.status(200).send(JSON.stringify(products));
-        });
-    } catch (ex) {
-        res.status(500).send()
-    }
+    searchTermAtSears(query, function (products) {
+        res.status(200).send(JSON.stringify(products));
+    });
 }
 
 function searchTermAtSears(keyword, callback) {
-    GET("http://api.developer.sears.com/v2.1/products/search/Sears/json/keyword/" + keyword + "?apikey=pLZJ1YdF0gJQYa4w5QmqRrPb7DWWi9Rx", function (json) {
+    var url = "http://petervr-test.apigee.net/apigee_try/keyword/" + keyword;
+    var oldUrl = "http://api.developer.sears.com/v2.1/productsmake/search/Sears/json/keyword/" + keyword + "?apikey=pLZJ1YdF0gJQYa4w5QmqRrPb7DWWi9Rx";
+    GET(url, function (json) {
         console.log("Got the response from SEARS: " + json);
         var obj = JSON.parse(json);
 
@@ -329,7 +331,7 @@ function GET(url, callback) {
     });
 }
 
-var MyCarts = [makeNewCart("My First Cart"), makeNewCart("For Friends")];
+var MyCarts = [makeNewCart("My First Cart", "default"), makeNewCart("For Friends", "admin")];
 var creatorSecrets = [];
 
 function saveToJson() {

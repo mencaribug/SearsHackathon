@@ -1,0 +1,6 @@
+creatorSecrets is undefined!
+Express server listening on port \\.\pipe\91793a70-b92b-4ce9-8bd3-db2be0a23a9e
+[90mGET / [32m200 [90m1347ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL","HLB3YWNUBV","WE7VATQYL6","FPH6KC7QZH","QMWFXRPZAF"]}
+[90mPOST /cartList [32m200 [90m59ms - 1.18kb[0m
+[90mGET /carts/QMWFXRPZAF [32m200 [90m232ms - 3.91kb[0m

@@ -1,0 +1,35 @@
+creatorSecrets is undefined!
+Express server listening on port \\.\pipe\eb82d31d-e760-4236-ba4b-6f8b76062a78
+[90mGET / [32m200 [90m548ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15"]}
+[90mPOST /cartList [32m200 [90m40ms - 1.53kb[0m
+[90mGET / [32m200 [90m56ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15"]}
+[90mPOST /cartList [32m200 [90m23ms - 1.53kb[0m
+[90mGET / [32m200 [90m51ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15"]}
+[90mPOST /cartList [32m200 [90m15ms - 1.53kb[0m
+[90mGET / [32m200 [90m59ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15"]}
+[90mPOST /cartList [32m200 [90m14ms - 1.53kb[0m
+[90mGET / [32m200 [90m38ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15"]}
+[90mPOST /cartList [32m200 [90m48ms - 1.53kb[0m
+[90mGET / [32m200 [90m35ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15"]}
+[90mPOST /cartList [32m200 [90m31ms - 1.53kb[0m
+[90mGET / [32m200 [90m24ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15"]}
+[90mPOST /cartList [32m200 [90m12ms - 1.53kb[0m
+[90mPOST /carts [32m201 [90m1ms[0m
+[90mGET /? [32m200 [90m32ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO"]}
+[90mPOST /cartList [32m200 [90m8ms - 1.63kb[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO"]}
+[90mPOST /cartList [32m200 [90m11ms - 1.63kb[0m
+[90mPOST /carts [32m201 [90m1ms[0m
+[90mGET /? [32m200 [90m42ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ"]}
+[90mPOST /cartList [32m200 [90m43ms - 1.75kb[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ"]}
+[90mPOST /cartList [32m200 [90m17ms - 1.75kb[0m

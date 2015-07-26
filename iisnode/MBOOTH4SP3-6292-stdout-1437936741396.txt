@@ -1,0 +1,17 @@
+creatorSecrets is undefined!
+Express server listening on port \\.\pipe\84028ce0-4367-4c0c-858e-93d1bc95ed49
+{ [Error: ENOENT, open 'C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\storage\carts.json']
+  errno: 34,
+  code: 'ENOENT',
+  path: 'C:\\Users\\mbooth4\\Documents\\My Web Sites\\Shopping Buddies\\storage\\carts.json' }
+[90mGET /carts/HLB3YWNUBV [31m500 [90m65ms - 33b[0m
+[90mGET / [32m200 [90m2238ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL","HLB3YWNUBV","WE7VATQYL6"]}
+[90mPOST /cartList [32m200 [90m93ms - 12b[0m
+[90mPOST /carts [32m201 [90m2ms[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL","HLB3YWNUBV","WE7VATQYL6","FPH6KC7QZH"]}
+[90mPOST /cartList [32m200 [90m7ms - 110b[0m
+[90mGET /? [32m200 [90m85ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL","HLB3YWNUBV","WE7VATQYL6","FPH6KC7QZH"]}
+[90mPOST /cartList [32m200 [90m39ms - 110b[0m
+[90mGET /carts/FPH6KC7QZH [32m200 [90m223ms - 998b[0m

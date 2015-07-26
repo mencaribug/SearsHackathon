@@ -1,0 +1,25 @@
+creatorSecrets is undefined!
+Express server listening on port \\.\pipe\fff38512-77fe-4554-acac-7a9c95e7308d
+{ [Error: ENOENT, open 'C:\Users\mbooth4\Documents\My Web Sites\Shopping Buddies\storage\carts.json']
+  errno: 34,
+  code: 'ENOENT',
+  path: 'C:\\Users\\mbooth4\\Documents\\My Web Sites\\Shopping Buddies\\storage\\carts.json' }
+[90mGET / [32m200 [90m1546ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL"]}
+[90mPOST /cartList [32m200 [90m127ms - 12b[0m
+[90mPOST /carts [32m201 [90m5ms[0m
+[90mGET /? [32m200 [90m59ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL","HLB3YWNUBV"]}
+[90mPOST /cartList [32m200 [90m24ms - 127b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL","HLB3YWNUBV"]}
+[90mPOST /cartList [32m200 [90m20ms - 127b[0m
+[90mGET /? [32m200 [90m92ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL","HLB3YWNUBV"]}
+[90mPOST /cartList [32m200 [90m42ms - 127b[0m
+[90mPOST /carts [32m201 [90m1ms[0m
+[90mGET /? [32m200 [90m55ms - 710b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL","HLB3YWNUBV","WE7VATQYL6"]}
+[90mPOST /cartList [32m200 [90m50ms - 230b[0m
+getCartList body: {"ids":["id_3","id_14","id_15","D5UQOEA1XO","605ZKMDYFZ","H7CM78HYOL","HLB3YWNUBV","WE7VATQYL6"]}
+[90mPOST /cartList [32m200 [90m53ms - 230b[0m
+[90mGET /carts/HLB3YWNUBV [32m200 [90m186ms - 961b[0m
